@@ -46,23 +46,30 @@
                 </Entry>
             </Grid>
 
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Remember me in device"
+                <ActivityIndicator>
+
+                </ActivityIndicator>
+
+                <StackLayout Orientation="Horizontal">
+                <Label Text="Remember me on device"
                        VerticalOptions="Center"
                        HorizontalOptions="StartAndExpand"/>
                 <Switch
-                       HorizontalOptions="End"
-                    I></Switch>
+                       HorizontalOptions="End"></Switch>
             </StackLayout>
-
+                <Label 
+                      Text="Forgot your Password"
+                      VerticalOptions="Center"
+                      HorizontalOptions="StartAndExpand"
+                      TextColor="Blue">
+                    
+                </Label>
             
 
         
             
            
-            <ActivityIndicator>
-                
-            </ActivityIndicator>
+            
             <StackLayout Margin="40,0">
                 <Button Text="Login"
                     BackgroundColor="Navy"
