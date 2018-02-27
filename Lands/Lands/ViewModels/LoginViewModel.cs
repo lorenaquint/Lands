@@ -3,6 +3,7 @@
 
 namespace Lands.ViewModels
 {
+    using GalaSoft.MvvmLight.Command;
     using System.Windows.Input;
     public class LoginViewModel
     {
@@ -32,7 +33,10 @@ namespace Lands.ViewModels
           public ICommand LoginCommand
         {
             get;
-            set;
+            //{
+            //    //return RelayCommand;
+            //}
+            
         }
         #endregion
         #region Constructores
@@ -41,6 +45,9 @@ namespace Lands.ViewModels
             IsRemembered = true;
         }
         #endregion
+        #region Métodos
        
+        #endregion
+
     }
 }
