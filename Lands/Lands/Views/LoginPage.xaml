@@ -2,32 +2,26 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Lands.Views.LoginPage"
-             Title="Ingreso"
+             Title="Lands"
              BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Content>
         <ScrollView>
-        <StackLayout
-            Padding="10,20,10,5">
-            <Label Text="Lands"
-                   FontSize="Large"
-                   HorizontalOptions="Center"
-                   FontAttributes="Bold"
-                 />
-            <Image
-              
+            <StackLayout
+            Padding="5">
+                <Image
                 Source="onu.png"
                 WidthRequest="200">
                 
             </Image>
-            <Grid Margin="0,20">
+            <Grid
+                  Margin="10,0"
+                  VerticalOptions="CenterAndExpand">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-                <Label Text="Email"
-                       HorizontalTextAlignment="End"
-                       VerticalTextAlignment="Center"
-                  
+                <Label Text="Email"       
+                       VerticalOptions="Center"
                  />
                 <Entry Keyboard="Email"
                    Placeholder="Enter your mail"
@@ -36,8 +30,7 @@
             </Entry>
                 <Label Text="Password"
                        Grid.Row="1"
-                       HorizontalTextAlignment="End"
-                       VerticalTextAlignment="Center"
+                       VerticalOptions="Center"
                   
                  />
                 <Entry IsPassword="True"
@@ -51,7 +44,11 @@
                 </ActivityIndicator>
 
                 <StackLayout Orientation="Horizontal"
+<<<<<<< HEAD
                              VerticalOptions="CenterAndExpand">
+=======
+                             Margin="10,0">
+>>>>>>> cde3ab568d7d449dd9524745f5d819a13ec2a830
                 <Label Text="Remember me on device"
                        VerticalOptions="Center"
                        HorizontalOptions="StartAndExpand"/>
@@ -61,25 +58,28 @@
                 <Label 
                       Text="Forgot your Password"
                       VerticalOptions="CenterAndExpand"
+<<<<<<< HEAD
                       HorizontalOptions="StartAndExpand"
                       TextColor="Blue"
 
                     >
+=======
+                      HorizontalOptions="Center"
+                      TextColor="Blue">
+>>>>>>> cde3ab568d7d449dd9524745f5d819a13ec2a830
                     
                 </Label>
-            
-
-        
-            
-           
-            
+          
+                  
             <StackLayout Margin="40,0"
-                         VerticalOptions="CenterAndExpand">
+                         VerticalOptions="CenterAndExpand"
+                         Orientation="Horizontal">
                 <Button Text="Login"
                     BackgroundColor="Navy"
                     TextColor="White"
                     BorderRadius="23"
                     HeightRequest="46"
+                    HorizontalOptions="CenterAndExpand"
                     >
 
                 </Button>
@@ -88,6 +88,7 @@
                     TextColor="White"
                     BorderRadius="23"
                     HeightRequest="46"
+                    HorizontalOptions="CenterAndExpand"
                     >
 
                 </Button>
