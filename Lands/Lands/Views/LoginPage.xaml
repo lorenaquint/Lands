@@ -5,7 +5,8 @@
              Title="Lands"
              BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView 
+                BindingContext="{Binding Login}">
             <StackLayout
             Padding="5">
                 <Image
@@ -25,7 +26,8 @@
                  />
                 <Entry Keyboard="Email"
                    Placeholder="Enter your mail"
-                   Grid.Column="1">
+                   Grid.Column="1"
+                   Text="{Binding Email, Mode = TwoWay}">
                 
             </Entry>
                 <Label Text="Password"
@@ -34,12 +36,15 @@
                   
                  />
                 <Entry IsPassword="True"
-                   Placeholder="Enter your password" Grid.Row="1" Grid.Column="1">
+                   Placeholder="Enter your password" Grid.Row="1" Grid.Column="1"
+                    Text="{Binding Password,Mode=TwoWay}">
                     
                 </Entry>
             </Grid>
 
-                <ActivityIndicator>
+                <ActivityIndicator
+                               VerticalOptions="CenterAndExpand"
+                               IsRunning="{Binding IsRunning,Mode=TwoWay}">
 
                 </ActivityIndicator>
 
@@ -50,11 +55,12 @@
                        VerticalOptions="Center"
                        HorizontalOptions="StartAndExpand"/>
                 <Switch
-                       HorizontalOptions="End"></Switch>
+                       HorizontalOptions="End"
+                        IsToggled="{Binding IsRemembered, Mode= TwoWay}"></Switch>
             </StackLayout >
                 <Label 
                       Text="Forgot your Password"
-                      VerticalOptions="FillAndExpand"
+                      VerticalOptions="CenterAndExpand"
                       HorizontalOptions="Center"
                       TextColor="Blue"
                     >
@@ -63,9 +69,11 @@
           
                   
             <StackLayout Margin="40,0" 
-                         Orientation="Horizontal">
+                         Orientation="Horizontal"
+                         VerticalOptions="CenterAndExpand">
                 <Button Text="Login"
                     BackgroundColor="Navy"
+                    Command="{Binding LoginCommand}"
                     TextColor="White"
                     BorderRadius="23"
                     HeightRequest="46"
