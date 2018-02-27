@@ -50,7 +50,8 @@
 
                 </ActivityIndicator>
 
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal"
+                             VerticalOptions="CenterAndExpand">
                 <Label Text="Remember me on device"
                        VerticalOptions="Center"
                        HorizontalOptions="StartAndExpand"/>
@@ -59,9 +60,11 @@
             </StackLayout>
                 <Label 
                       Text="Forgot your Password"
-                      VerticalOptions="Center"
+                      VerticalOptions="CenterAndExpand"
                       HorizontalOptions="StartAndExpand"
-                      TextColor="Blue">
+                      TextColor="Blue"
+
+                    >
                     
                 </Label>
             
