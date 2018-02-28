@@ -14,7 +14,7 @@ namespace Lands.ViewModels
 
         #endregion
         #region atributos
-       
+        private string email;
         private string password;
         private bool isRunning;
         private bool isEnabled;
@@ -22,10 +22,14 @@ namespace Lands.ViewModels
         #region Propiedades
         public string Email
         {
-            get;
-
-            set;
-
+            get
+            {
+                return email;
+            }
+            set
+            {
+                SetValue(ref email, value);
+            }
 
         }
         public string Password
@@ -127,8 +131,10 @@ namespace Lands.ViewModels
                         "Ingreso",
                         "Bienvenido a mi app",
                         "Aceptar");
-            
+            this.Email = string.Empty;
+            this.Password = string.Empty;
             return;
+
         }
         #endregion
 
