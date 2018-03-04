@@ -6,7 +6,7 @@ namespace Lands.ViewModels
     using GalaSoft.MvvmLight.Command;
     using System.Windows.Input;
     using Xamarin.Forms;
-
+    using Lands.Views;
 
     public class LoginViewModel : BaseViewModel
     {
@@ -88,6 +88,8 @@ namespace Lands.ViewModels
         {
             IsRemembered = true;
             IsEnabled = true;
+            this.Email = "clquintero79@misena.edu.co";
+            this.Password = "Admin2.0";
         }
 
 
@@ -127,12 +129,16 @@ namespace Lands.ViewModels
             }
             this.IsRunning = false;
             this.IsEnabled = true;
-            await Application.Current.MainPage.DisplayAlert(
+            /*await Application.Current.MainPage.DisplayAlert(
                         "Ingreso",
                         "Bienvenido a mi app",
                         "Aceptar");
+                        */
+
             this.Email = string.Empty;
             this.Password = string.Empty;
+            MainViewModel.GetInstance().Lands = new LandsViewModel(); 
+            await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
             return;
 
         }
