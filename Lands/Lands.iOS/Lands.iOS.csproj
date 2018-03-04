@@ -120,11 +120,14 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
+    <PackageReference Include="Xam.Plugin.Connectivity">
+      <Version>3.1.1</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Lands\Lands.csproj">
-      <Project>{7744F764-709E-4DA2-92AE-79F983DB8DD9}</Project>
+      <Project>{2EBF6A0F-BCE9-4E75-BAC0-2981FEC80F23}</Project>
       <Name>Lands</Name>
     </ProjectReference>
   </ItemGroup>

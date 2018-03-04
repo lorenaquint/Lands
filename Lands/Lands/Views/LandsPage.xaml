@@ -8,11 +8,22 @@
         <StackLayout
               Padding="5"
               BindingContext="{Binding Lands}">
+              <Button
+                   BackgroundColor="Aqua"
+                   WidthRequest="50"
+                   HeightRequest="50"  
+                   BorderRadius="25"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="Center"
+                >
+              </Button>
               <Label
                   Text="Estamos en la land page"
                   FontSize="Large"
-                  VerticalOptions="Center"
+                  VerticalOptions="StartAndExpand"
+                  HorizontalOptions="Center"
                   >
+                
 
 
               </Label>
