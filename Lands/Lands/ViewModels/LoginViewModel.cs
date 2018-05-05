@@ -97,6 +97,7 @@ namespace Lands.ViewModels
         #region Métodos
         private async void Login()
         {
+            
             if (string.IsNullOrEmpty(Email))
             {
                 await Application.Current.MainPage.DisplayAlert(
