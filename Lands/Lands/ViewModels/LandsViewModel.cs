@@ -15,18 +15,17 @@ namespace Lands.ViewModels
     {
         #region Services
         private ApiService apiService;
+		#endregion
+		#region Atributos
         private bool isRefreshing;
         private string filter;
         private List<Land> landList;
-        #endregion
-        #region Propiedades
-        private ObservableCollection<Land> lands;
-
+		private ObservableCollection<PaisItemViewModel> lands;
 
         #endregion
-
+        
         #region Propiedades
-        public ObservableCollection<Land> Lands
+		public ObservableCollection<PaisItemViewModel> Lands
         {
             get
             {
@@ -101,19 +100,51 @@ namespace Lands.ViewModels
             }
             this.IsRefreshing = false;
             landList = (List<Land>)response.Result;
-            this.Lands = new ObservableCollection<Land>(landList);
+			this.Lands = new ObservableCollection<PaisItemViewModel>(ToItemViewModel());
 
         }
-        private void Search()
+
+		private IEnumerable<PaisItemViewModel> ToItemViewModel()
+		{
+			return this.landList.Select(l=> new PaisItemViewModel
+            {
+                Alpha2Code = l.Alpha2Code,
+                Alpha3Code = l.Alpha3Code,
+                AltSpellings = l.AltSpellings,
+                Area = l.Area,
+                Borders = l.Borders,
+                CallingCodes = l.CallingCodes,
+                Capital = l.Capital,
+                Cioc = l.Cioc,
+                Currencies = l.Currencies,
+                Demonym = l.Demonym,
+                Flag = l.Flag,
+                Gini = l.Gini,
+                Languages = l.Languages,
+                Latlng = l.Latlng,
+                Name = l.Name,
+                NativeName = l.NativeName,
+                NumericCode = l.NumericCode,
+                Population = l.Population,
+                Region = l.Region,
+                RegionalBlocs = l.RegionalBlocs,
+                Subregion = l.Subregion,
+                Timezones = l.Timezones,
+                TopLevelDomain = l.TopLevelDomain,
+                Translations = l.Translations
+            });
+		}
+
+		private void Search()
         {
             if (string.IsNullOrEmpty(Filter))
             {
-                this.Lands = new ObservableCollection<Land>(this.landList);
+				this.Lands = new ObservableCollection<PaisItemViewModel>(ToItemViewModel());
             }
             else
             {
-                this.Lands = new ObservableCollection<Land>(
-                    this.landList.Where(l => l.Name.ToLower().Contains(Filter.ToLower())
+				this.Lands = new ObservableCollection<PaisItemViewModel>(
+					this.ToItemViewModel().Where(l => l.Name.ToLower().Contains(Filter.ToLower())
                                         || l.Capital.ToLower().Contains(Filter.ToLower())));
             }
         }
