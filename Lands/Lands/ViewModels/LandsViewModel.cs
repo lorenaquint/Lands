@@ -18,8 +18,7 @@ namespace Lands.ViewModels
 		#endregion
 		#region Atributos
         private bool isRefreshing;
-        private string filter;
-        private List<Land> landList;
+		private string filter;
 		private ObservableCollection<PaisItemViewModel> lands;
 
         #endregion
@@ -99,14 +98,14 @@ namespace Lands.ViewModels
                 return;
             }
             this.IsRefreshing = false;
-            landList = (List<Land>)response.Result;
+			MainViewModel.GetInstance().LandsList = (List<Land>)response.Result;
 			this.Lands = new ObservableCollection<PaisItemViewModel>(ToItemViewModel());
 
         }
 
 		private IEnumerable<PaisItemViewModel> ToItemViewModel()
 		{
-			return this.landList.Select(l=> new PaisItemViewModel
+			return MainViewModel.GetInstance().LandsList.Select(l=> new PaisItemViewModel
             {
                 Alpha2Code = l.Alpha2Code,
                 Alpha3Code = l.Alpha3Code,

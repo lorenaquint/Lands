@@ -1,9 +1,21 @@
 ﻿
 
+
 namespace Lands.ViewModels
 {
-    public class MainViewModel
+
+using System.Collections.Generic;
+	using Lands.Models;
+
+	public class MainViewModel
     {
+		#region Propiedades
+		public List<Land> LandsList
+        {
+            get;
+            set;
+        }
+		#endregion
         #region ViewModel
         public LoginViewModel Login
         {

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Lands.Views.LenguagesPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Lenguages"
+             Icon="ic_action_people">
+    <ContentPage.Content>
+        <StackLayout
+               BindingContext="{Binding Pais}"
+               Padding="5">
+        <Label FontSize="Large"
+               FontAttributes="Bold" 
+               HorizontalOptions="Center" 
+               Text="{Binding Land.Name}" 
+               TextColor="Black" />
+        <ListView 
+                HasUnevenRows="true" 
+                ItemsSource="{Binding Languages}"
+                SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".5*" />
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding Iso6392}" 
+                                           TextColor="Black"
+                                           FontAttributes="Bold"
+                                           FontSize="Medium">
+                                    </Label>
+                                    <Label Text="{Binding Name}" 
+                                           Grid.Column="1">
+                                    </Label>
+                                    <Label Text="{Binding NativeName}" 
+                                           Grid.Column="2">
+                                    </Label>
+                            </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
