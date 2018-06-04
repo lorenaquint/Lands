@@ -10,8 +10,8 @@
             <StackLayout
             Padding="5">
                 <Image
-                Source="onu.png"
-                WidthRequest="200">
+                Source="flags.jpg"
+                WidthRequest="300">
                 
             </Image>
             <Grid
