@@ -93,6 +93,8 @@ namespace Lands.ViewModels
         {
             IsRemembered = true;
             IsEnabled = true;
+            this.Email = "lorenaquint@gmail.com";
+            this.Password = "Admin2.0";
             this.services = new ApiService();
         }
 
