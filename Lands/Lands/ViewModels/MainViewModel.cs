@@ -15,7 +15,11 @@ using System.Collections.Generic;
             get;
             set;
         }
-		#endregion
+        public TokenResponse Token
+        {   get;
+            set;
+        }
+        #endregion
         #region ViewModel
         public LoginViewModel Login
         {
